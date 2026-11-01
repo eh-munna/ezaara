@@ -1,0 +1,15 @@
+# dependencies
+node_modules/
+
+# environment files (secrets: Stripe keys, DB password, cookie secret)
+.env
+.env.*
+!.env.example
+
+# build output
+dist/
+build/
+
+# logs and OS files
+*.log
+.DS_Store
