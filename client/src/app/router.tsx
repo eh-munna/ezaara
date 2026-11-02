@@ -7,6 +7,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 import OrdersPage from '../pages/OrdersPage';
 import ProductDetailPage from '../pages/ProductDetailPage';
 import RegisterPage from '../pages/RegisterPage';
+import ShopPage from '../pages/ShopPage';
 import AdminProductsPage from '../pages/admin/AdminProductsPage';
 import RootLayout from './layouts/RootLayout';
 
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> },
+      { path: 'shop', element: <ShopPage /> },
       { path: 'products/:slug', element: <ProductDetailPage /> },
       { path: 'cart', element: <CartPage /> },
       { path: 'login', element: <LoginPage /> },

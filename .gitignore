@@ -13,3 +13,32 @@ build/
 # logs and OS files
 *.log
 .DS_Store
+
+# private planning notes
+brief.md
+plan.md
+summary.md
+
+# keys, certificates and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa*
+credentials*.json
+service-account*.json
+secrets/
+
+# database dumps and local data
+*.sql
+*.dump
+*.sqlite
+*.sqlite3
+
+# editor and tooling
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.claude/
+*.local

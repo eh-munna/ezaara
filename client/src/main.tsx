@@ -5,10 +5,18 @@ import Providers from './app/providers/Providers';
 import { router } from './app/router';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <Providers>
-      <RouterProvider router={router} />
-    </Providers>
-  </StrictMode>,
-);
+async function enableMocking() {
+  if (import.meta.env.VITE_USE_MOCK !== 'true') return;
+  const { worker } = await import('./mocks/browser');
+  await worker.start({ onUnhandledFrame: 'bypass' });
+}
+
+enableMocking().then(() => {
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <Providers>
+        <RouterProvider router={router} />
+      </Providers>
+    </StrictMode>,
+  );
+});
